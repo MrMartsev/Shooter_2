@@ -1,4 +1,3 @@
-
 from pygame import *
 from random import randint
 import linecache
@@ -8,9 +7,7 @@ font.init()
 font_1 = font.SysFont('Arial', 36)
 font_2 = font.SysFont('Arial', 36)
 
-_time_ = 0
-
-                  
+_time_ = 0               
 x = 0
 init()
 missed = 0
@@ -26,16 +23,18 @@ clock = time.Clock()
 
 background = transform.scale(image.load('30.jpg'), (win_width, win_height))
 lvl_fone = transform.scale(image.load('galaxy.jpg'), (win_width, win_height))
-
-
   
 mixer.init()
 mixer.music.load('space.ogg')
 mixer.music.play()
 
-line = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20240404.120101.0\data\student\1715184\184431\open_levels.txt", 5)
+line = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20241210.135312.0\data\student\1715184\184431\open_levels.txt", 5)
 data = line.split(' ')
-volume = float(data[0])
+try:
+    volume = float(data[0])
+except ValueError:
+    volume = 1.0
+
 
 mixer.music.set_volume(volume)
 
@@ -304,27 +303,27 @@ def mob_spawn(hp, speed_min, speed_max):
 
 
 file = open("open_levels.txt", "r", encoding='utf-8')
-line = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20240404.120101.0\data\student\1715184\184431\open_levels.txt", 1)
-data = line.split(' ')
-data_stud = int(data[1])
+line1 = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20241210.135312.0\data\student\1715184\184431\open_levels.txt", 1)
+data1_ = line1.split(' ')
+data_stud = int(data1_[1])
 if data_stud == 1:
     button_2 = button_2_on
     
-line = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20240404.120101.0\data\student\1715184\184431\open_levels.txt", 2)
-data = line.split(' ')
-data_stud = int(data[1])
+line2 = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20241210.135312.0\data\student\1715184\184431\open_levels.txt", 2)
+data2 = line2.split(' ')
+data_stud = int(data2[1])
 if data_stud == 1:
     button_3 = button_3_on
 
-line = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20240404.120101.0\data\student\1715184\184431\open_levels.txt", 3)
-data = line.split(' ')
-data_stud = int(data[1])
+line3 = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20241210.135312.0\data\student\1715184\184431\open_levels.txt", 3)
+data3 = line3.split(' ')
+data_stud = int(data3[1])
 if data_stud == 1:
     button_4 = button_4_on  
 
-line = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20240404.120101.0\data\student\1715184\184431\open_levels.txt", 4)
-data = line.split(' ')
-data_stud = int(data[1])
+line4 = linecache.getline(r"C:\Program Files\Algoritmika\vscode\data\extensions\algoritmika.algopython-20241210.135312.0\data\student\1715184\184431\open_levels.txt", 4)
+data4 = line4.split(' ')
+data_stud = int(data4[1])
 if data_stud == 1:
     button_5 = button_5_on 
 
